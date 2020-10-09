@@ -1,3 +1,5 @@
+Overview with screenshots of functionality.
+
 Initial log in:
 
 ![1](https://user-images.githubusercontent.com/50964947/95616843-660af900-0a62-11eb-97fc-265ec8d4640d.PNG)

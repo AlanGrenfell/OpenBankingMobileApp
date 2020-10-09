@@ -1,0 +1,161 @@
+<html>
+<head>
+  <title>Sign In</title>
+  <meta name="viewport" content="width=device-width,height=device-height,minimum-scale=1,maximum-scale=1"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+    <script type="text/javascript" src="js/version2.js"></script>
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+          }
+      #cover > img {
+        position: relative;
+        float: left;
+        width: 80%;
+        margin: 5%;
+        object-fit:cover;
+          }
+      #cover > FIGCAPTION {
+        font-size: 80%;
+        text-align: center;
+        position: relative;
+
+          }
+          .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  }
+    </style>
+
+
+</head>
+<body>
+  <div data-role="page" id="signin"> <!-- PAGE 1: SIGN IN -->
+    <div data-role="header" data-theme='a' data-position="fixed">
+        <img src='img/OBP_full_web.png' alt='OpenBankProject'>
+    </div><!-- /header -->
+    <div data-role="main" class="ui-content">
+      <div id='cover'>
+
+        <img style="float:center" src='img/key.png' alt='key'>
+
+      </div>
+
+
+        <label for="txt-email-address">Email Address</label>
+        <input type="text" name="txt-email-address" id="txt-email-address" value="">
+        <label for="txt-password">Password</label>
+        <input type="password" name="txt-password" id="txt-password" value="">
+        <fieldset data-role="controlgroup">
+            <label><input type="checkbox" name="chk-keep-signed-in" id="chk-keep-signed-in"> Keep me signed in</label>
+        </fieldset>  <!-- implement saved login later -->
+  <a id='buttonpop' visibility=hidden href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" ></a>
+  <a id="submitbutton" class="ui-btn">Submit</a>
+
+  <p class="mc-top-margin-1-5"><a href="#loginhelp">Can't access your account?</a></p>
+
+  </div>
+
+  <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+      <div data-role="header" data-theme="a">
+      <h3>Error</h3>
+      </div>
+      <div role="main" class="ui-content">
+          <p>Unrecognised credentials. Use a pre-configured log in?<br></h3>
+          <a href="#" class="ui-btn ui-btn-inline" data-rel="back">Back</a>
+          <a href="#loginhelp" class="ui-btn ui-btn-inline" data-transition="flow">Choose log in</a>
+      </div>
+  </div>
+</div>  <!-- PAGE 1 END -->
+
+  <div data-role="page" id="loginhelp"> <!-- PAGE 2: LOGIN HELP -->
+    <div data-role="header" data-theme='a' data-position="fixed">
+        <img src='img/OBP_full_web.png' alt='OpenBankProject'>
+    </div><!-- /header -->
+    <!-- <div data-role="main" class="ui-content"> -->
+      <!-- <body onload="onload();"> -->
+      <div data-role="content">
+      <img style="display:block; margin-left: auto; margin-right:auto; margin-top: 20px;" src='img/icon-security.png' alt='lock'>
+      </div>
+             <label for = "dropdown" text-align="center"><h3>Select a pre made login</h3></label>
+               <select name = "dropdown" id = "dropdown" class="dropdown">
+                 <option value="0" selected>robert.xuk.x@example.com</option>
+                 <option value="1">susan.xuk.x@example.com</option>
+                 <option value="2">anil.xuk.x@example.com</option>
+                 <option value="3">ellie.xuk.x@example.com</option>
+                 <option value="4">robert.yuk.y@example.com</option>
+                 <option value="5">susan.yuk.y@example.com</option>
+                 <option value="6">anil.yuk.y@example.com</option>
+                 <option value="7">ellie.yuk.y@example.com</option>
+               </select> <!--value selected to use index of 'dict' object to easily navigate-->
+               <span id="display">Display name: Robert XUk X</span>
+          <div>
+          <button id="login">Login</button>
+          </div>
+          <p id="msg" style="display:none">Login successful!</p>
+          <!-- improve this later -->
+        <!-- </body> -->
+    <!-- </div> -->
+
+          <div class="footer" data-position="fixed">
+          <a href="#signin"><button id='back'>Go back</button></a>
+          </div>
+</div> <!-- PAGE 2 END -->
+
+  <div data-role="page" id="banks"> <!-- PAGE 3: BANKS -->
+
+  <div data-role="header" data-theme='a' data-position="fixed">
+          <img src='img/OBP_full_web.png' alt='OpenBankProject'>
+  </div><!-- /header -->
+  <!-- <body> -->
+  <div id="container">
+  <h2>List of banks</h2>
+  <h3>Click on a bank to see more details</h3>
+
+  <!-- <button id="bankbutton">Click to load banks</button> -->
+  <div id="results" class="resultclass"></div>
+  </div>
+  <!-- </body> -->
+  <div class="footer" data-position="fixed">
+    <a href="#signin"><button id='back'>Go back</button></a>
+  </div>
+
+</div> <!-- PAGE 3 END-->
+<div data-role="page" id="accounts"> <!-- PAGE 4: ACCOUNTS-->
+<body>
+  <div data-role="header" data-theme='a' data-position="fixed">
+          <img src='img/OBP_full_web.png' alt='OpenBankProject'>
+  </div><!-- /header -->
+<!-- <button id="accounts">See available accounts</button> -->
+<div id='heading'></div>
+<div id=accountdiv class='accsclass'></div>
+<div class="footer" position='fixed'>
+  <a href="#banks"><button id='back'>Go back</button></a>
+</div>
+</body>
+</div><!-- PAGE 4 END-->
+<div data-role="page" id="transactions"><!-- PAGE 5: Transactions-->
+<body>
+  <div data-role="header" data-theme='a' data-position="fixed">
+          <img src='img/OBP_full_web.png' alt='OpenBankProject'>
+  </div><!-- /header -->
+  <!-- <button id='specificaccbutton'>See transactions</button> -->
+  <div id='title'></div>
+  <div id='transactionsdiv'></div>
+
+</body>
+<div class="footer">
+<a href="#accounts"><button id='back'>Go back</button></a>
+</div>
+</div>
+
+</body>
+</html>

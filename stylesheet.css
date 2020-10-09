@@ -1,0 +1,31 @@
+img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #cover > img {
+            position: relative;
+            float: left;
+            width: 80%;
+            margin: 5%;
+            object-fit: cover;
+        }
+
+        #cover > FIGCAPTION {
+            font-size: 80%;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .loggedinas {
+            vertical-align: middle;
+        }
